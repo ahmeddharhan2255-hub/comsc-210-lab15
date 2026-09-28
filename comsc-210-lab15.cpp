@@ -27,8 +27,9 @@ class Movie{
 
         void print(){
             cout << "Movie: " << movie << endl;
-            cout << "Year Released: " << year << endl;
-            cout << "Screen Writer: " << screenwriter << endl;
+            cout << "\tYear Released: " << year << endl;
+            cout << "\tcreen Writer: " << screenwriter << endl;
+            cout << endl;
         }
 };
 
@@ -43,23 +44,27 @@ int main(){
         return 1;
     }
 
+    for(int i = 0; i < SIZE; i++){
+ 
+        string tempMovie;
+        int tempYear;
+        string tempScreenwriter;
 
-    Movie temp;
-
-    string tempMovie;
-    int tempYear;
-    string tempScreenwriter;
-
-    while(getline(file, tempMovie)){
+        getline(file,tempMovie);
         file >> tempYear;
         file.ignore();
         getline(file, tempScreenwriter);
 
-        temp.setMovie(tempMovie);
-        temp.setYear(tempYear);
-        temp.setWriter(tempScreenwriter);
+        movies[i].setMovie(tempMovie);
+        movies[i].setYear(tempYear);
+        movies[i].setWriter(tempScreenwriter);
 
-        movies.pushback(temp);
+    }
+
+    file.close();
+
+    for(int i = 0; i < SIZE; i++){
+        movies[i].print();
     }
 
     return 0;
