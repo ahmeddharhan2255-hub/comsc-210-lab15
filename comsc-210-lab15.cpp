@@ -34,8 +34,14 @@ class Movie{
 
 int main(){
 
-    
+    vector<Movie> movies(SIZE);
 
+    ifstream file("Best Movie of 2019.txt");
+
+    if(!file.is_open()){
+        cout << "Error! File couldn't be opened!" << endl;
+        return 1;
+    }
 
     return 0;
 }
