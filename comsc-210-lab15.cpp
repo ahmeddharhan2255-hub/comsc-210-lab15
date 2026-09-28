@@ -46,11 +46,18 @@ int main(){
 
     Movie temp;
 
-    while(getline(file, temp)){
+    string tempMovie;
+    int tempYear;
+    string tempScreenwriter;
 
+    while(getline(file, tempMovie)){
+        file >> tempYear;
+        file.ignore();
+        getline(file, tempScreenwriter);
 
-
-
+        temp.setMovie(tempMovie);
+        temp.setYear(tempYear);
+        temp.setWriter(tempScreenwriter);
 
         movies.pushback(temp);
     }
