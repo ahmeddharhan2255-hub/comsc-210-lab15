@@ -28,7 +28,7 @@ class Movie{
         void print(){
             cout << "Movie: " << movie << endl;
             cout << "Year Released: " << year << endl;
-            cout << "Screen Writer" << screenwriter << endl;
+            cout << "Screen Writer: " << screenwriter << endl;
         }
 };
 
@@ -43,8 +43,16 @@ int main(){
         return 1;
     }
 
-    for(int i = 0; i < SIZE; i++){
-        movies[i].
+
+    Movie temp;
+
+    while(getline(file, temp)){
+
+
+
+
+
+        movies.pushback(temp);
     }
 
     return 0;
