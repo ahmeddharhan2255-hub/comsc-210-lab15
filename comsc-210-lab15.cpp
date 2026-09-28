@@ -7,8 +7,10 @@
 
 using namespace std;
 
+//Size of the vector
 const int SIZE = 4;
 
+//class definition
 class Movie{
     private:
         string movie;
@@ -16,6 +18,8 @@ class Movie{
         string screenwriter;
 
      public:
+
+        //Setters and Getters
         void setMovie(string a)         {movie = a;}
         string getMovie()               {return movie;}
 
@@ -28,13 +32,13 @@ class Movie{
         void print(){
             cout << "Movie: " << movie << endl;
             cout << "\tYear Released: " << year << endl;
-            cout << "\tcreen Writer: " << screenwriter << endl;
+            cout << "\tScreen Writer: " << screenwriter << endl;
             cout << endl;
         }
 };
 
 int main(){
-
+    //Creats vector using class with SIZE 4
     vector<Movie> movies(SIZE);
 
     ifstream file("Best Movie of 2019.txt");
@@ -63,6 +67,7 @@ int main(){
 
     file.close();
 
+    //Uses void func to display data in movies
     for(int i = 0; i < SIZE; i++){
         movies[i].print();
     }
